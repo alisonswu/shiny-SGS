@@ -16,7 +16,7 @@
 
 
 # true function:
-f <- function(x){return(1 -2*(x-0.4)^2)}
+f <- function(x){return(2*(x-0.4)^2)}
 # sampled n values from the function
 f_sample <- function(x,n, sigma){return(rep(f(x),n) + rnorm(n,0,sigma))}
 # simulation 
@@ -51,7 +51,7 @@ SGS <- function(sigma = 0.01, N = 10){
         Xs_list[[s]] = Xs
         
         # step 3
-        if(max(f1,f2)>max(f4,f3)){x3 = x4}else{x1 = x2; x2 = x4}
+        if(min(f1,f2)<min(f4,f3)){x3 = x4}else{x1 = x2; x2 = x4}
     }   
     return(Xs_list)
 }
