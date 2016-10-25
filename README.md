@@ -16,7 +16,10 @@ The Stochastic Golden Search shrinks the search interval by a fixed factor 1/φ 
 ## Simulation with Shiny App 
 The shiny app simulate the search for the following example.
 <p align="left">
-  <img src="shiny.png" width="700"/>
+  <img src="shiny.png" width="570"/>
+</p>
+<p align="left">
+  <img src="screenshot.png" width="600"/>
 </p>
 You will need RStudio and internet connection to run the app. Click [here](https://www.rstudio.com/home/) to install RStudio.
 
