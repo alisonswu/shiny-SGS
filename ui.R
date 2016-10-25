@@ -19,7 +19,7 @@ shinyUI(fluidPage(
       
     sidebarPanel(width = 3,
         withMathJax(), 
-        h5( '$$\\mu(x) = -2x^2 + 1.6x +0.68$$'),
+        h5( '$$\\mu(x) = 2x^2 - 1.6x + 0.32$$'),
         h5( '$$Y|x \\sim \\mu(x)+ N(0,\\sigma^2)$$'),
         h5("Choose Setup",style = "color:#0099cc"),
         numericInput("sigma", 
