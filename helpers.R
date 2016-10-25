@@ -21,7 +21,7 @@ f <- function(x){return(1 -2*(x-0.4)^2)}
 f_sample <- function(x,n, sigma){return(rep(f(x),n) + rnorm(n,0,sigma))}
 # simulation 
 # simulate agent based SIR model 
-SGS <- function(sigma = 0.01, T = 10){
+SGS <- function(sigma = 0.01, N = 10){
     Xs_list = list()
     # initiate search parameters
     s = 0 
@@ -30,16 +30,15 @@ SGS <- function(sigma = 0.01, T = 10){
     x1 = 0; x2 = 1/rho^2; x3 = 1
     
     # for each stage 
-    for(s in 1:T){
-        print(s) ###
+    for(s in 1:N){
         set.seed(s)
-        ordered = T
+        ordered = TRUE
         # step 1 
         if(x2-x1 > x3-x2){x4 = x2 - (x2-x1)/rho^2}else{x4 = x2 + (x3-x2)/rho^2}
-        if(x2 > x4){x = x2; x2 = x4; x4 = x; ordered = F}
+        if(x2 > x4){x = x2; x2 = x4; x4 = x; ordered = FALSE}
         # step 2 
         epsilon_s = Cl*rho^(-3-s)
-        n_s = ceiling(2/epsilon_s^2*log(6*n))
+        n_s = ceiling(2/epsilon_s^2*log(6*N))
         f1 =  mean(f_sample(x1, n_s, sigma))
         f2 =  mean(f_sample(x2, n_s, sigma))
         f4 =  mean(f_sample(x4, n_s, sigma))
@@ -49,7 +48,6 @@ SGS <- function(sigma = 0.01, T = 10){
         }else{
             Xs =  c(x1, x4, x2, x3, f1, f4, f2, f3)
         }
-        print(Xs)### 
         Xs_list[[s]] = Xs
         
         # step 3

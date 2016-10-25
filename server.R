@@ -9,7 +9,7 @@ source("helpers.R")
 shinyServer(function(input, output) {
 
     sim <- eventReactive(input$go, {
-        SGS(sigma = input$sigma, T= input$T)
+        SGS(sigma = input$sigma, N= input$N)
     })
 
     output$plot1 <- renderPlot({

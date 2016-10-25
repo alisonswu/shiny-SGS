@@ -27,7 +27,7 @@ shinyUI(fluidPage(
             min = 0.01, max = 0.2, step = 0.01,
             value = 0.1),
         
-        numericInput('T', 
+        numericInput('N', 
             label = "$$T \\mbox{ (search stages)}$$", 
             min = 0, max = 20, step = 1, 
             value = 10),
@@ -40,7 +40,7 @@ shinyUI(fluidPage(
           plotOutput("plot1", width = "90%"),
           br(),
           alignCenter(
-              sliderInput("t", "Stage", 
+              sliderInput("t", "stage", 
                   min=1, max=10, value=1,  step=1, width = "70%", animate=animationOptions(loop=TRUE))
           )
           
