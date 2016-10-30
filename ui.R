@@ -5,6 +5,7 @@
 
 # ui.R
 library(shiny)
+library(shinythemes)
 
 alignCenter <- function(el) {
     htmltools::tagAppendAttributes(el,
@@ -12,7 +13,7 @@ alignCenter <- function(el) {
     )
 }
 
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme("cerulean"),
   titlePanel("Stochastic Golden Search"),
   
   sidebarLayout(
