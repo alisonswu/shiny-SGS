@@ -5,6 +5,7 @@
 
 # ui.R
 library(shiny)
+if(!"shinythemes" %in% installed.packages()){install.packages("shinythemes")}
 library(shinythemes)
 
 alignCenter <- function(el) {
