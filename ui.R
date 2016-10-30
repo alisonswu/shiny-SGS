@@ -13,7 +13,7 @@ alignCenter <- function(el) {
     )
 }
 
-shinyUI(fluidPage(theme = shinytheme("cerulean"),
+shinyUI(fluidPage(theme = shinytheme("sandstone"),
   titlePanel("Stochastic Golden Search"),
   
   sidebarLayout(
